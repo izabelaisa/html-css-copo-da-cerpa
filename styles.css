@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  background: #1c1c2b;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Stardos Stencil", serif;
+}
+
+.sky {
+  background: linear-gradient(to top, #1c1c2b, #5a6988);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 50px;
+}
+
+.sign {
+  display: flex;
+  align-items: flex-end;
+  gap: 60px;
+}
+
+.cerpa-logo {
+  text-align: center;
+}
+
+.cerpa-text {
+  font-size: 60px;
+  color: #ff7a00;
+  letter-spacing: 5px;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff, 0 0 10px #ffae42, 0 0 20px #ffae42;
+}
+
+/* Copo facetado estilo americano */
+.beer-glass {
+  width: 80px;
+  height: 180px;
+  background: linear-gradient(to bottom, #f5f5f5, #dcdcdc);
+  border: 2px solid #ccc;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  clip-path: polygon(
+    35% 100%,
+    65% 100%,
+    /* base fina */ 100% 0%,
+    0% 0% /* topo largo */
+  );
+  animation: glowGlass 6s ease-in-out infinite;
+}
+
+/* Cerveja */
+.beer {
+  background: linear-gradient(to top, #f1c40f, #f9e79f);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  border-bottom: 4px solid white;
+  animation: fillBeer 6s linear infinite;
+}
+
+/* Espuma */
+.foam {
+  height: 20px;
+  width: 100%;
+  background: white;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 10px white;
+}
+
+/* Animação de preenchimento */
+@keyframes fillBeer {
+  0% {
+    height: 0%;
+  }
+  90% {
+    height: 85.5%;
+  }
+  100% {
+    height: 0%;
+  } /* reinicia */
+}
+
+@keyframes glowGlass {
+  0%,
+  80% {
+    box-shadow: none;
+  }
+  85% {
+    box-shadow: 0 0 10px #fff37c, 0 0 20px #fdfd96;
+  }
+  90% {
+    box-shadow: 0 0 20px #ffffcc, 0 0 40px #ffff99;
+  }
+  95% {
+    box-shadow: 0 0 10px #fff37c, 0 0 20px #fdfd96;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
